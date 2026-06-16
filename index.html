@@ -3,33 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Name | IIT Patna</title>
+    <title>Dr. Nutan Kumar Tomar | IIT Patna</title>
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <img src="IITP1.jpg" alt="IIT Patna Logo" class="logo">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html" target="_blank">Profile</a></li>
+                    <li><a href="research.html" target="_blank">Research</a></li>
+                    <li><a href="thesis.html" target="_blank">Thesis</a></li>
+                    <li><a href="projects.html" target="_blank">Projects</a></li>
+                    <li><a href="awards.html" target="_blank">Awards/Scholarships</a></li>
+                    <li><a href="memberships.html" target="_blank">Membership</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="hero">
-            <h1>Welcome to the Faculty Page</h1>
-            <p>Academic and professional information for [Faculty Name].</p>
+            <img src="nkt.jpg" alt="Dr. Nutan Kumar Tomar" class="profile-pic">
+            <div class="details">
+                <h1>Dr. Nutan Kumar Tomar</h1>
+                <p class="title">Associate Professor, Department of Mathematics</p>
+                <p class="institute">Indian Institute of Technology Patna</p>
+                <hr>
+                <p class="research-interest">Research Interest: <strong>Mathematical Control Theory</strong></p>
+                <a href="https://scholar.google.co.in/citations?user=WHEUGkYAAAAJ&hl=en" target="_blank" class="scholar-link">View Google Scholar Profile</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 IIT Patna. All rights reserved.</p>
+        <div class="footer-content">
+            <div id="contact">
+                <h3>N.K. TOMAR</h3>
+                <p>Department of Mathematics<br>Indian Institute of Technology Patna</p>
+                <p>Bihta-801106, Patna, Bihar (India)</p>
+                <p>✉ nktomar[@]iitp.ac.in, chinidma[@]gmail.com</p>
+                <p>📞 +91-(0)-94708 36610, +91-(0)-6115-233-021</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

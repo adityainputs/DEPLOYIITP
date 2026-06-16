@@ -1,0 +1,190 @@
+/* Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* Fixes horizontal scrolling */
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-navy: #002366;
+    --accent-gold: #DAA520;
+    --bg-light: #F4F6F9; /* Professional soft gray */
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-navy);
+    width: 100%;
+    padding: 10px 0;
+    position: relative; /* Required for mobile menu positioning */
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Desktop Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Main Layout & Hero Section */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--text-light); /* Makes a clean white card */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* PREVENTS THE IMAGE FROM SQUISHING */
+    border: 4px solid var(--accent-gold); /* Adds a premium touch */
+}
+
+.details h1 { color: var(--primary-navy); margin-bottom: 5px; }
+.title { font-size: 1.1rem; color: #555; font-weight: bold; }
+.institute { color: #777; margin-bottom: 15px; }
+hr { border: 0; height: 1px; background: #ddd; margin: 20px 0; }
+.research-interest { margin-bottom: 20px; font-size: 1.1rem; }
+
+.scholar-link {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--text-light);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.scholar-link:hover { background-color: #b8860b; }
+
+/* Footer */
+footer {
+    background-color: var(--primary-navy);
+    color: var(--text-light);
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#contact h3 { color: var(--accent-gold); margin-bottom: 10px; }
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* === MOBILE MEDIA QUERY === */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block; /* Show hamburger button */
+    }
+
+    /* Transform nav into a dropdown menu */
+    nav {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 100%; /* Places it right below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-navy);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    nav.active {
+        display: block; /* Shown when 'active' class is added by JS */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav a {
+        display: block; /* Makes the whole row clickable */
+        padding: 15px 20px;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        border-radius: 0;
+    }
+
+    /* Stack the Hero Section */
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}
