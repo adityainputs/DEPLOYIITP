@@ -283,3 +283,54 @@ footer {
         flex-direction: column;
     }
 }
+/*Projects.html*/
+/* === PROJECTS PAGE STYLES === */
+.pl {
+    list-style: none;
+    padding: 0;
+}
+
+.pl li {
+    padding: 20px 20px 20px 40px; 
+    border-bottom: 1px solid #eee;
+    position: relative;
+    transition: background-color 0.2s ease;
+    border-radius: 6px;
+}
+
+/* Creates a custom gold bullet point */
+.pl li::before {
+    content: "•";
+    color: var(--accent-gold);
+    font-size: 2rem;
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    line-height: 1;
+}
+
+.pl li:last-child {
+    border-bottom: none;
+}
+
+/* Subtle hover effect */
+.pl li:hover {
+    background-color: #f8f9fa;
+}
+
+/* Makes the project title stand out */
+.pl-title {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-navy);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Styles the secondary information (Funding/Duration) */
+.pl-meta {
+    display: block;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
