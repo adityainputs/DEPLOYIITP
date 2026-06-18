@@ -334,3 +334,42 @@ footer {
     color: #555;
     line-height: 1.5;
 }
+
+/*Awards html*/
+/* === AWARDS PAGE STYLES === */
+.al {
+    list-style: none; /* Removes default browser numbers */
+    padding: 0;
+    counter-reset: award-counter; /* Starts a custom numbering sequence */
+}
+
+.al li {
+    padding: 15px 15px 15px 50px; /* Leaves space on the left for the number */
+    border-bottom: 1px solid #eee;
+    position: relative;
+    transition: background-color 0.2s ease;
+    border-radius: 6px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Custom styling for the numbers */
+.al li::before {
+    counter-increment: award-counter; /* Increases the number by 1 for each row */
+    content: counter(award-counter) "."; /* Displays the number with a period */
+    color: var(--accent-gold); /* Colors the number gold */
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 15px; /* Positions the number neatly on the left edge */
+    top: 15px;
+}
+
+.al li:last-child {
+    border-bottom: none;
+}
+
+/* Subtle hover effect to match your other pages */
+.al li:hover {
+    background-color: #f8f9fa;
+}
