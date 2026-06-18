@@ -1,12 +1,6 @@
-function toggleMenu() {
-    // Finds the navigation menu
-    const menu = document.getElementById('nav-menu');
-    // Toggles the 'active' class on and off
-    menu.classList.toggle('active');
-}
-
-//Reasearch
-
+// ==========================================
+// 1. DATA REPOSITORIES (Frozen for performance)
+// ==========================================
 
 const researchData = {
     publications: [
@@ -39,11 +33,10 @@ const researchData = {
         "N.K. Tomar and N. Sukavanam, Exact Controllability of Semilinear Thermoelastic System with Control Solely in Thermal Equation, Numerical Functional Analysis and Optimization, vol. 29(9-10), 2008, pp. 1171-1179.",
         "N. Sukavanam and N.K. Tomar, Approximate Controllability of semilinear delay control systems, Nonlinear Functional Analysis and Application, vol. 12(1), 2007, pp. 53-59."
     ],
-
     conferences: [
-        "J. Jaiswal, M.K. Gupta, and N.K. Tomar. On Functional Observers for Descriptor Systems. In: Proceedings of American Control Conference 2021 (ACC 2021) (Accepted), IEEE, 2021.",
-        "M.K. Gupta, N.K. Tomar, D. Sharma, and J. Jaiswal. PD observer design for Descriptor Systems with Unknown Inputs. In: Proceedings of 5th IEEE Conference on Recent Advances and Innovations in Engineering (ICRAIE 2020) (Accepted), IEEE, 2020.",
-        "R. Radhakrishnan, S. Bhaumik, and N.K. Tomar. Continuous-Discrete Quadrature Filters for Intercepting a Ballistic Target on Reentry using Seeker Measurements. In: Proceedings of Third IFAC International Conference on Advances in Control and Optimization of Dynamical Systems (ACODS 2018), IFAC-PapersOnLine Journal, Elsevier, vol. 51(1), 2018, pp. 383-388.",
+        "J. Jaiswal, M.K. Gupta, and N.K. Tomar. On Functional Observers for Descriptor Systems. In: Proceedings of American Control Conference 2021 (ACC 2021) (Accepted), IEEE, 2021.(Place of Conference: New Orleans, Louisiana, USA during May 26-28,2021)",
+        "M.K. Gupta, N.K. Tomar, D. Sharma, and J. Jaiswal. PD observer design for Descriptor Systems with Unknown Inputs. In: Proceedings of 5th IEEE Conference on Recent Advances and Innovations in Engineering (ICRAIE 2020) (Accepted), IEEE, 2020.(Place of Conference: Poornima College of Engineering, Rajasthan, India during Dec1-3, 2020)",
+        "R. Radhakrishnan, S. Bhaumik, and N.K. Tomar. Continuous-Discrete Quadrature Filters for Intercepting a Ballistic Target on Reentry using Seeker Measurements. In: Proceedings of Third IFAC International Conference on Advances in Control and Optimization of Dynamical Systems (ACODS 2018), IFAC-PapersOnLine Journal, Elsevier, vol. 51(1), 2018, pp. 383-388.(Place of Conference: Dr. APJ Abdul Kalam MissileComplex, Hyderabad, India during Feb 18 - 22, 2018)",
         "R. Radhakrishnan, S. Bhaumik, and N.K. Tomar. Continuous-discrete shifted Rayleigh filter for underwater passive bearings-only target tracking. In: Proceedings of the AsianControl Conference (ASCC-2017) IEEE, 2017. (Place of Conference: Gold Coast ConventionCentre, Australia during Dec 17 - 20, 2017). DOI: 10.1109/ASCC.2017.8287272",
         "S. Chandra, M.K. Gupta, and N.K. Tomar. Observer Design Approach to Synchronize Lorenz Chaotic Systems for Secure Communication. In: Proceedings of the International Conference on Computational Modellimg and Simulation, 2017. (Place of Conference:University of Colombo, Sri Lanka during May 17 - 19, 2017)",
         "R. Radhakrishnan, M. Saha, S. Bhaumik, and N.K. Tomar. Ballistic target tracking and its interception using suboptimal filters on reentry. In: Proceedings of the Sixth Inter-national Symposium on Embedded Computing and System Design (ISED-2016) IEEE,2016. (Place of Conference: Indian Institute of Technology, Patna Bihta, India duringDec 15 - 17, 2016) DOI:10.1109/ISED.2016.7977096",
@@ -58,7 +51,6 @@ const researchData = {
         "M.K. Gupta, N.K. Tomar and S. Bhaumik. On Observability of Irregular Descriptor Systems. In: Advances in Control and Optimization of Dynamical Systems (ACODS 2014), IFAC, vol. 3(1), 2014, PP. 376-379. (Place of Conference: IIT Kanpur, Kanpur, India during March 13 - 15, 2014).",
         "N.K. Tomar and N. Sukavanam. Exact Controllability of Semilinear Thermoelastic System with Control and non-linearity in Thermal Component Only. In: ICIAM07, PAMM, vol. 7(1), 2008, pp. 2030039 - 2030040. (Place of Conference: ETH Zurich and University of Zurich, Switzerland during July 16 - 20, 2007)."
     ],
-
     workshops: [
         "Workshop on Scientific Computing, Indian Institute of Technology Patna, Aug 02-03, 2012.",
         "Tutorial Series on algorithms and mathematical techniques used in simulation and verification tools for Integrated Circuits, Indian Institute of Technology Patna, India, Aug-Sep, 2012.",
@@ -70,31 +62,114 @@ const researchData = {
     ]
 };
 
-// UI Controller to populate lists and switch tabs smoothly
-function switchTab(category) {
-    const listContainer = document.getElementById("research-list");
-    if (!listContainer) return; // Prevent errors if executing script on home or profile page
+const thesisData = {
+    phd: [
+        { name: "Rishab Sharma", title: "Mathematical Control Theory.", year: "2020-current", meta: "" },
+        { name: "Ashna Goel", title: "Mathematical Control Theory.", year: "2020-current", meta: "" },
+        { name: "Pabitra Kumar Tunga", title: "Observer Design for Descriptor Systems.", year: "2019-current", meta: "" },
+        { name: "Juhi Jaiswal", title: "Observer Design for Descriptor Systems", year: "2018-current", meta: "" },
+        { name: "Rahul Radhakrishnan", title: "Nonlinear Filtering: Extensions and Application to Target Tracking Problems.", year: "2013-2018", meta: "Jointly guided with Dr Shovan Bhaumik, IIT Patna" },
+        { name: "Arindam Kundu", title: "Modelling and Numerics For Arbitrage-Free Option Pricing using Bernstein Polynomial Basis.", year: "2010 - 2017", meta: "Jointly guided with Dr Summit Kumar, IIM Udaipur" },
+        { name: "Mahendra Kumar Gupta", title: "Observer Design for Irregular Descriptor Systems.", year: "2012-2016", meta: "Jointly guided with Dr Shovan Bhaumik, IIT Patna" },
+        { name: "Suman Kumar", title: "Controllability Analysis for Infinite-Dimensional Semilinear Systems.", year: "2010-2016", meta: "" },
+        { name: "Vikas Kumar Mishra", title: "Controllability and Feedback Control Problems for Linear Time-Invariant Descriptor Systems.", year: "2011-2016", meta: "" }
+    ],
+    mtech: [
+        { name: "Ramen Ghosh", title: "Study of Wong Sequences for Solution of Differential Algebraic Equations.", year: "2016-2017", meta: "" },
+        { name: "Ujjwal Pratap", title: "Study of Model Order Reduction Techniques for Descriptor Systems.", year: "2016-2017", meta: "" },
+        { name: "Sonam Chandra", title: "Implementation of Descriptor Observer Design Approach to Synchronize Chaotic Systems for Secure Communication.", year: "2014-2015", meta: "" }
+    ],
+    msc: [
+        { name: "Ankita Yadav", title: "", year: "2020-2021", meta: "" },
+        { name: "Suman Kumari, Rani Kumari, Vaishaly Verma, Shivam Middha", title: "", year: "2017-2018", meta: "" }
+    ]
+};
 
-    // Reset list HTML contents completely
-    listContainer.innerHTML = "";
+// Freeze datasets in memory to optimize browser engine execution speeds
+Object.freeze(researchData);
+Object.freeze(thesisData);
 
-    // Generate inner list fragments cleanly
-    researchData[category].forEach(itemText => {
-        const li = document.createElement("li");
-        li.innerHTML = itemText;
-        listContainer.appendChild(li);
-    });
+// ==========================================
+// 2. CORE INTERFACE FUNCTIONS
+// ==========================================
 
-    // Toggle styling states on tab buttons
-    const buttons = document.querySelectorAll(".tab-btn");
-    buttons.forEach(btn => btn.classList.remove("active"));
-    
-    // Set target button to active state natively matching event click parameters
-    const clickedBtn = Array.from(buttons).find(btn => btn.getAttribute("onclick").includes(category));
-    if (clickedBtn) clickedBtn.classList.add("active");
+// Lightweight navigation toggle
+function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    if (menu) menu.classList.toggle('active');
 }
 
-// Initial invocation after resource rendering complete to default populate first tab view
+// Optimized Dashboard Renderer utilizing DocumentFragments
+function renderDashboardList(targetId, dataArray, cardGeneratorFn) {
+    const container = document.getElementById(targetId);
+    if (!container) return;
+
+    // Use DocumentFragment to batch DOM injections into a single reflow paint
+    const fragment = document.createDocumentFragment();
+    
+    dataArray.forEach(item => {
+        fragment.appendChild(cardGeneratorFn(item));
+    });
+
+    container.innerHTML = "";
+    container.appendChild(fragment);
+}
+
+// Optimized tab visual state updater
+function updateActiveTabStyle(activeToken) {
+    const buttons = document.querySelectorAll(".tab-btn");
+    buttons.forEach(btn => {
+        const clickAttr = btn.getAttribute("onclick") || "";
+        btn.classList.toggle("active", clickAttr.includes(activeToken));
+    });
+}
+
+// ==========================================
+// 3. EVENT BUSINESS LOGIC CONTROLLERS
+// ==========================================
+
+function switchTab(category) {
+    renderDashboardList("research-list", researchData[category], itemText => {
+        const li = document.createElement("li");
+        li.innerHTML = itemText;
+        return li;
+    });
+    updateActiveTabStyle(category);
+}
+
+function switchThesisTab(level) {
+    renderDashboardList("thesis-container", thesisData[level], student => {
+        const card = document.createElement("div");
+        card.className = "sc"; // Student Card
+        
+        const metaHTML = student.meta ? `<div class="sc-meta">💡 ${student.meta}</div>` : "";
+        // CONDITION CHECK: Only build the title element if student.title is not empty
+        const titleHTML = student.title ? `<div class="sc-title"><strong>Title:</strong> ${student.title}</div>` : "";
+
+        card.innerHTML = `
+            <div class="sc-header">
+                <span class="sc-name">👤 ${student.name}</span>
+                <span class="sc-year">📅 ${student.year}</span>
+            </div>
+            ${titleHTML}
+            ${metaHTML}
+        `;
+        return card;
+    });
+    updateActiveTabStyle(level);
+}
+
+// ==========================================
+// 4. ROUTER RUNTIME INITIALIZATION
+// ==========================================
+
+// Global invocation binder layout listener
 document.addEventListener("DOMContentLoaded", () => {
-    switchTab("publications");
+    // Detect page context natively based on anchor presence
+    if (document.getElementById("research-list")) {
+        switchTab("publications");
+    }
+    if (document.getElementById("thesis-container")) {
+        switchThesisTab("phd");
+    }
 });

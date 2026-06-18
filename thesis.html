@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Supervision - Dr. Nutan Kumar Tomar</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+   
+<header>
+        <div class="header-container">
+            <img src="IITP1.jpg" alt="IIT Patna Logo" class="logo">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html" target="_blank">Profile</a></li>
+                    <li><a href="research.html" target="_blank">Research</a></li>
+                    <li><a href="thesis.html" target="_blank">Thesis</a></li>
+                    <li><a href="projects.html" target="_blank">Projects</a></li>
+                    <li><a href="awards.html" target="_blank">Awards/Scholarships</a></li>
+                    <li><a href="memberships.html" target="_blank">Membership</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="pp">
+        <h1 class="pt">Thesis</h1>
+
+        <!-- Custom Tab Navigation -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="switchThesisTab('phd')">Ph.D. Students</button>
+            <button class="tab-btn" onclick="switchThesisTab('mtech')">M.Tech Students</button>
+            <button class="tab-btn" onclick="switchThesisTab('msc')">M.Sc. Students</button>
+        </div>
+
+        <!-- Dynamic Content Mount Target -->
+        <div id="thesis-container">
+            <!-- JavaScript will inject cards dynamically here -->
+        </div>
+    </main>
+
+         <footer>
+        <div class="footer-content">
+            <div id="contact">
+                <h3>N.K. TOMAR</h3>
+                <p>Department of Mathematics<br>Indian Institute of Technology Patna</p>
+                <p>Bihta-801106, Patna, Bihar (India)</p>
+                <p>✉ nktomar[@]iitp.ac.in, chinidma[@]gmail.com</p>
+                <p>📞 +91-(0)-94708 36610, +91-(0)-6115-233-021</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
