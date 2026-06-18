@@ -85,7 +85,7 @@ const thesisData = {
     ]
 };
 
-// Freeze datasets in memory to optimize browser engine execution speeds
+// Freezing datasets in memory to optimize browser engine execution speeds
 Object.freeze(researchData);
 Object.freeze(thesisData);
 
@@ -104,7 +104,7 @@ function renderDashboardList(targetId, dataArray, cardGeneratorFn) {
     const container = document.getElementById(targetId);
     if (!container) return;
 
-    // Use DocumentFragment to batch DOM injections into a single reflow paint
+    //  DocumentFragment to batch DOM injections into a single reflow paint
     const fragment = document.createDocumentFragment();
     
     dataArray.forEach(item => {
@@ -143,7 +143,7 @@ function switchThesisTab(level) {
         card.className = "sc"; // Student Card
         
         const metaHTML = student.meta ? `<div class="sc-meta">💡 ${student.meta}</div>` : "";
-        // CONDITION CHECK: Only build the title element if student.title is not empty
+        // CONDITION CHECK:To only build the title element if student.title is not empty
         const titleHTML = student.title ? `<div class="sc-title"><strong>Title:</strong> ${student.title}</div>` : "";
 
         card.innerHTML = `
@@ -165,7 +165,7 @@ function switchThesisTab(level) {
 
 // Global invocation binder layout listener
 document.addEventListener("DOMContentLoaded", () => {
-    // Detect page context natively based on anchor presence
+    
     if (document.getElementById("research-list")) {
         switchTab("publications");
     }
